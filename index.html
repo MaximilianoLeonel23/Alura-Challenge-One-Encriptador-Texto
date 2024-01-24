@@ -3,7 +3,35 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="styles/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 		<title>Alura Challenge ONE - Encriptador de textos</title>
 	</head>
-	<body></body>
+	<body>
+        <main class="main">
+            <div id="logo">
+                <img src="./assets/images/logo.png" />
+            </div>
+            <section class="encrypt-container">
+                <textarea id="text" name="text" class="textarea" rows="16">Ingrese el texto aquí</textarea>
+                <div class="flex-column-4 w-full">
+                    <p class="text text-sm">Solo letras minúsculas y sin acento</p>
+                    <div class="flex-row-8">
+                        <button class="btn solid-btn">Encriptar</button>
+                        <button class="btn ghost-btn">Desencriptar</button>
+                    </div>
+                </div>
+            </section>
+            <aside class="result-container">
+                <img src="./assets/images/ilustracion.png" class="illustration"/>
+                <h4 class="center">Ningun mensaje fue encontrado</h4>
+                <p class="text text-sm center">Ingresa el texto que desees encriptar o desencriptar</p>
+            </aside>
+        </main>
+        <footer class="footer">
+            <p class="text text-sm">&#169 Copyright - Hecho con 💛 Maximiliano Pérez</p>
+        </footer>
+    </body>
 </html>
