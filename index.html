@@ -15,12 +15,12 @@
                 <img src="./assets/images/logo.png" />
             </div>
             <section class="encrypt-container">
-                <textarea id="text" name="text" class="textarea" rows="16">Ingrese el texto aquí</textarea>
+                <textarea id="textToEncrypt" name="text" class="textarea" rows="16">Ingrese el texto aquí</textarea>
                 <div class="flex-column-4 w-full">
                     <p class="text text-sm">Solo letras minúsculas y sin acento</p>
                     <div class="flex-row-8">
-                        <button class="btn solid-btn">Encriptar</button>
-                        <button class="btn ghost-btn">Desencriptar</button>
+                        <button id="encryptBtn" class="btn solid-btn">Encriptar</button>
+                        <button id="decryptBtn" class="btn ghost-btn">Desencriptar</button>
                     </div>
                 </div>
             </section>
@@ -33,5 +33,6 @@
         <footer class="footer">
             <p class="text text-sm">&#169 Copyright - Hecho con 💛 Maximiliano Pérez</p>
         </footer>
+        <script src="./app.js"></script>
     </body>
 </html>
