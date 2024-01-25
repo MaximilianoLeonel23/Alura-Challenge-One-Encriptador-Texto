@@ -17,17 +17,19 @@
             <section class="encrypt-container">
                 <textarea id="textToEncrypt" name="text" class="textarea" rows="16">Ingrese el texto aquí</textarea>
                 <div class="flex-column-4 w-full">
-                    <p class="text text-sm">Solo letras minúsculas y sin acento</p>
+                    <p class="text text-sm">❕ Solo letras minúsculas y sin acento</p>
                     <div class="flex-row-8">
                         <button id="encryptBtn" class="btn solid-btn">Encriptar</button>
                         <button id="decryptBtn" class="btn ghost-btn">Desencriptar</button>
                     </div>
                 </div>
             </section>
-            <aside class="result-container">
-                <img src="./assets/images/ilustracion.png" class="illustration"/>
-                <h4 class="center">Ningun mensaje fue encontrado</h4>
-                <p class="text text-sm center">Ingresa el texto que desees encriptar o desencriptar</p>
+            <aside id="encryptResults" class="aside">
+                <div class='flex-column-4'>
+                    <img src='./assets/images/ilustracion.png' class='illustration'/>
+                    <h4 class='center'>Ningun mensaje fue encontrado</h4>
+                    <p class='text text-sm center'>Ingresa el texto que desees encriptar o desencriptar</p>
+                </div>
             </aside>
         </main>
         <footer class="footer">
