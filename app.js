@@ -111,7 +111,7 @@ function copyToClipboard(value) {
 
 // Chequeo por formato correcto
 function checkInputFormat(value) {
-	const regex = /^[a-z,\s]+$/;
+	const regex = /^[a-z\s.,;?!]+$/;
 	return regex.test(value);
 }
 // Creación de la alerta
