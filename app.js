@@ -1,6 +1,6 @@
 'use strict';
 
-const results = document.getElementById('encryptResults');
+const results = document.getElementById('results');
 const encryptBtn = document.getElementById('encryptBtn');
 const decryptBtn = document.getElementById('decryptBtn');
 const textToEncrypt = document.getElementById('textToEncrypt');
@@ -20,10 +20,8 @@ const decryptKeys = {
 	ufat: 'u',
 };
 
-let isEncryptedTextFound = false;
-
 // Evento onclick button 'Encriptar'
-encryptBtn.addEventListener('click', () => {
+function onClickEncrypt() {
 	const encryptedText = encryptText(textToEncrypt.value);
 
 	// Chequeo la existencia del resultado
@@ -37,12 +35,11 @@ encryptBtn.addEventListener('click', () => {
 	} else {
 		showCopyAlert('Ingresa el texto a codificar');
 	}
-});
-
+}
 ////////
 
 // Evento onclick button 'Desencriptar'
-decryptBtn.addEventListener('click', () => {
+function onClickDecrypt() {
 	const decryptedText = decryptText(textToEncrypt.value);
 
 	// Chequeo la existencia del resultado
@@ -56,7 +53,7 @@ decryptBtn.addEventListener('click', () => {
 	} else {
 		showCopyAlert('Ingresa el texto a codificar');
 	}
-});
+}
 /////////////
 
 // Muestra el resultado en la barra lateral
@@ -70,7 +67,7 @@ function showResults(value) {
 	const container = document.createElement('div');
 	container.className = 'flex-between';
 	const p = document.createElement('p');
-	p.className = 'text';
+	p.className = 'text text-left';
 	p.innerHTML = value;
 	const btn = document.createElement('button');
 	btn.className = 'btn ghost-btn';
@@ -114,7 +111,7 @@ function copyToClipboard(value) {
 
 // Chequeo por formato correcto
 function checkInputFormat(value) {
-	const regex = /^[a-z\s]+$/;
+	const regex = /^[a-z,\s]+$/;
 	return regex.test(value);
 }
 // Creación de la alerta

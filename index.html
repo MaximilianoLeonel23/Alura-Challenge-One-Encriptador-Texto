@@ -11,22 +11,25 @@
 	</head>
 	<body>
         <main class="main">
-            <div id="logo">
+            <div class="logo">
                 <img src="./assets/images/logo.png" />
             </div>
             <section class="encrypt-container">
                 <textarea id="textToEncrypt" name="text" class="textarea" rows="16">Ingrese el texto aquí</textarea>
                 <div class="flex-column-4 w-full">
-                    <p class="text text-sm">❕ Solo letras minúsculas y sin acento</p>
-                    <div class="flex-row-8">
-                        <button id="encryptBtn" class="btn solid-btn">Encriptar</button>
-                        <button id="decryptBtn" class="btn ghost-btn">Desencriptar</button>
+                    <div class="flex-row-2">
+                        <img src="./assets/images/alert_symbol.png"/> 
+                        <p class="text text-sm">Solo letras minúsculas y sin acento</p>
+                    </div>
+                    <div class="btn-container" >
+                        <button id="encryptBtn" class="btn solid-btn" onclick="onClickEncrypt()">Encriptar</button>
+                        <button id="decryptBtn" class="btn ghost-btn" onclick="onClickDecrypt()">Desencriptar</button>
                     </div>
                 </div>
             </section>
-            <aside id="encryptResults" class="aside">
-                <div class='flex-column-4'>
-                    <img src='./assets/images/ilustracion.png' class='illustration'/>
+            <aside id="results" class="aside">
+                <div class='result-container' >
+                    <img src='./assets/images/ilustracion.png'/>
                     <h4 class='center'>Ningun mensaje fue encontrado</h4>
                     <p class='text text-sm center'>Ingresa el texto que desees encriptar o desencriptar</p>
                 </div>
