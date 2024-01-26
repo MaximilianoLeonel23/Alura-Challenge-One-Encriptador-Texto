@@ -25,7 +25,18 @@ let isEncryptedTextFound = false;
 // Evento onclick button 'Encriptar'
 encryptBtn.addEventListener('click', () => {
 	const encryptedText = encryptText(textToEncrypt.value);
-	if (encryptedText) showResults(encryptedText);
+
+	// Chequeo la existencia del resultado
+	if (encryptedText) {
+		// Chequeo que este en el formato correcto
+		if (checkInputFormat(encryptedText)) {
+			showResults(encryptedText);
+		} else {
+			showCopyAlert('El texto contiene caracteres inválidos');
+		}
+	} else {
+		showCopyAlert('Ingresa el texto a codificar');
+	}
 });
 
 ////////
@@ -33,7 +44,18 @@ encryptBtn.addEventListener('click', () => {
 // Evento onclick button 'Desencriptar'
 decryptBtn.addEventListener('click', () => {
 	const decryptedText = decryptText(textToEncrypt.value);
-	if (decryptedText) showResults(decryptedText);
+
+	// Chequeo la existencia del resultado
+	if (decryptedText) {
+		// Chequeo que este en el formato correcto
+		if (checkInputFormat(decryptedText)) {
+			showResults(decryptedText);
+		} else {
+			showCopyAlert('El texto contiene caracteres inválidos');
+		}
+	} else {
+		showCopyAlert('Ingresa el texto a codificar');
+	}
 });
 /////////////
 
@@ -64,9 +86,6 @@ function encryptText(value) {
 	const regex = /[aeiou]/g;
 	const str = value;
 
-	if (checkInputFormat(str)) {
-		return;
-	}
 	const encryptedText = str.replace(regex, replaceVocal);
 	return encryptedText;
 }
@@ -90,23 +109,19 @@ function replaceVocal(vocal) {
 // Copiar al portapapeles
 function copyToClipboard(value) {
 	navigator.clipboard.writeText(value);
-	showCopyAlert();
+	showCopyAlert('Copiado al portapapeles');
 }
 
-// Chequeo por mayúsculas o letra 'ñ'
+// Chequeo por formato correcto
 function checkInputFormat(value) {
-	const regex = /[A-Z]/;
-	if (value.includes('ñ') || regex.test(value)) {
-		return false;
-	}
-	return true;
+	const regex = /^[a-z\s]+$/;
+	return regex.test(value);
 }
-
 // Creación de la alerta
-function showCopyAlert() {
+function showCopyAlert(message) {
 	const toast = document.createElement('div');
 	toast.className = 'toast text-sm';
-	toast.innerHTML = 'Copiado al portapapeles';
+	toast.innerHTML = message;
 	document.body.appendChild(toast);
 	setTimeout(() => {
 		document.body.removeChild(toast);
